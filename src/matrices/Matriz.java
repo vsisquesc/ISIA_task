@@ -48,6 +48,7 @@ public class Matriz {
         return matrizResultante; 
     } 
 
+
     public static Matriz multiplicarDosMatrices(Matriz mat1, Matriz mat2) throws DimensionesIncompatibles {      
         int r1 = mat1.getDimension().height; 
         int c1 = mat1.getDimension().width; 
@@ -65,6 +66,19 @@ public class Matriz {
         return matrizResultante;
     }
     
+
+    public static Matriz transponerMatriz(Matriz a) {      
+        int r = a.getDimension().height; 
+        int c = a.getDimension().width; 
+        Matriz matrizResultante = new Matriz(c, r, false);
+        for (int j = 0; j < r; j++) { 
+            for (int i = 0; i < c; i++) { 
+                matrizResultante.datos[j][i] += a.datos[i][j]; 
+            } 
+        } 
+        return matrizResultante; 
+    }
+
 
     @Override
     public String toString(){
